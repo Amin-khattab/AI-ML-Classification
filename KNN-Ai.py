@@ -17,7 +17,7 @@ sc = StandardScaler()
 x_train_scaled = sc.fit_transform(x_train)
 x_test_scaled = sc.transform(x_test)
 
-Knn = KNeighborsClassifier()
+Knn = KNeighborsClassifier(n_neighbors=5,metric="minkowski")
 Knn.fit(x_train_scaled,y_train)
 
 y_pred = Knn.predict(x_test_scaled)
