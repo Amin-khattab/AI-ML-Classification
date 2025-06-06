@@ -17,18 +17,7 @@ sc = StandardScaler()
 x_train_scaled = sc.fit_transform(x_train)
 x_test_scaled = sc.transform(x_test)
 
-Classifier = RandomForestClassifier(
-    n_estimators=300,
-    criterion='entropy',
-    max_depth=None,
-    min_samples_split=2,
-    min_samples_leaf=1,
-    max_features='sqrt',
-    bootstrap=True,
-    oob_score=False,
-    n_jobs=-1,
-    random_state=0
-)
+Classifier = RandomForestClassifier(n_estimators=300,random_state=0)
 
 Classifier.fit(x_train_scaled,y_train)
 
